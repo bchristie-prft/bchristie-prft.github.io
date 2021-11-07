@@ -19,6 +19,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Build project
         run: dotnet publish ./BChristiePRFT.Web/BChristiePRFT.Web.csproj --configuration Release --output Release --nologo
+      - name: Add .nojekyll file
+        run: touch Release/wwwroot/.nojekyll
       - name: Deploy GitHub pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
